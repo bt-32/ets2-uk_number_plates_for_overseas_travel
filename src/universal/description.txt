@@ -1,0 +1,18 @@
+[h1]UK Number Plates for Overseas Travel[/h1]
+
+This mod updates the number (license) plates for the United Kingdom (UK) to match the format that has been valid for overseas travel since 28th September 2021. It is perfect for anyone who likes realism, such as myself.
+
+Compared to the default SCS UK number plates, this mod changes the 'GB' to 'UK' and removes the blue flash.
+
+Since the above date, the country identifier 'GB' on a blue background - while still legal within the UK on already-issued plates - is no longer valid for overseas travel. The valid overseas specification is:
+
+[list]
+    [*] The letters 'UK' in royal blue, matching the blue in the Union Flag.
+    [*] The Union Flag (also known as the Union Jack) in landscape in specific colours.
+    [*] A background that is the same colour as the number plate (white for front, yellow for rear).
+    [*] Like all other flags and flashes, the flag must be positioned to the far-left side of the number plate.
+[/list]
+
+If you're SUPER keen for realism, remember that UK vehicles travelling in Spain, Cyprus and Malta must still show a UK sticker, regardless of what plate(s) they have.
+
+Source: [url=https://www.bnma.org/news/uk-flag-number-plate-design-confirmed-for-overseas-travel/]British Number Plate Manufacturers Association[/url]

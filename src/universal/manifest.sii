@@ -1,0 +1,12 @@
+SiiNunit
+{
+    mod_package : .package_name
+    {
+        package_version: "1.0.0"
+        display_name: "UK Number Plates for Overseas Travel"
+        author: "BT32"
+        icon: "icon.jpg"
+        description_file: "description.txt"
+        category[]: "other"
+    }
+}
