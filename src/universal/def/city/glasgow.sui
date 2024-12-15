@@ -1,0 +1,94 @@
+
+city_data : city.glasgow
+{
+	city_name: "Glasgow"
+	city_name_localized: "@@glasgow@@"
+	country: uk
+	population: 630000
+
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: 53
+	map_x_offsets[]: -30
+	map_x_offsets[]: -45
+	map_x_offsets[]: -41
+	map_x_offsets[]: -36
+	map_x_offsets[]: -36
+
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 25
+	map_y_offsets[]: -35
+	map_y_offsets[]: -76
+	map_y_offsets[]: -44
+	map_y_offsets[]: -30
+	map_y_offsets[]: -27
+
+	vehicle_brands[]: "daf"
+
+	license_plate[]: .glasgow.lp.car
+	license_plate[]: .glasgow.lp.truck_plyr
+	license_plate[]: .glasgow.lp.trailer_plyr
+}
+
+# Give AI cars from this city a local plate of any age 50% of the time.
+# The rest of the time they will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .glasgow.lp.car
+{
+	probability: 0.5
+	type: car
+	templates[]: "S01 222" # Scotland
+	def0[]: "A" # Glasgow
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+@include ".age_identifier_all.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give truck purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trucks; otherwise, all AI trucks would be on the newest plate.
+# AI trucks will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .glasgow.lp.truck_plyr
+{
+	probability: 0
+	type: truck
+	templates[]: "S01 222" # Scotland
+	def0[]: "A" # Glasgow
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give trailer purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trailers; otherwise, all AI trailers would be on the newest plate.
+# AI trailers will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .glasgow.lp.trailer_plyr
+{
+	probability: 0
+	type: trailer
+	templates[]: "S01 222" # Scotland
+	def0[]: "A" # Glasgow
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}

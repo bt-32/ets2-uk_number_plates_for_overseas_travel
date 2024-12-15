@@ -1,0 +1,104 @@
+
+city_data : city.dover
+{
+	city_name: "Dover"
+	city_name_localized: "@@dover@@"
+	country: uk
+	population: 120000
+
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: -20
+	map_x_offsets[]: -20
+	map_x_offsets[]: -15
+	map_x_offsets[]: -27
+	map_x_offsets[]: -24
+	map_x_offsets[]: -26
+
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 68
+	map_y_offsets[]: -14
+	map_y_offsets[]: -11
+	map_y_offsets[]: -25
+	map_y_offsets[]: -21
+	map_y_offsets[]: -26
+
+	license_plate[]: .dover.lp.car
+	license_plate[]: .dover.lp.truck_plyr
+	license_plate[]: .dover.lp.trailer_plyr
+}
+
+# Give AI cars from this city a local plate of any age 50% of the time.
+# The rest of the time they will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .dover.lp.car
+{
+	probability: 0.5
+	type: car
+	templates[]: "G01 222" # Garden of England
+	def0[]: "A" # Maidstone
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "N"
+@include ".age_identifier_all.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give truck purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trucks; otherwise, all AI trucks would be on the newest plate.
+# AI trucks will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .dover.lp.truck_plyr
+{
+	probability: 0
+	type: truck
+	templates[]: "G01 222" # Garden of England
+	def0[]: "A" # Maidstone
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "N"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give trailer purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trailers; otherwise, all AI trailers would be on the newest plate.
+# AI trailers will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .dover.lp.trailer_plyr
+{
+	probability: 0
+	type: trailer
+	templates[]: "G01 222" # Garden of England
+	def0[]: "A" # Maidstone
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "N"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}

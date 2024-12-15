@@ -1,0 +1,82 @@
+
+city_data : city.edinburgh
+{
+	city_name: "Edinburgh"
+	city_name_localized: "@@edinburgh@@"
+	country: uk
+	population: 510000
+
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: -50
+	map_x_offsets[]: -40
+	map_x_offsets[]: -48
+	map_x_offsets[]: -42
+	map_x_offsets[]: -38
+	map_x_offsets[]: -42
+
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: -15
+	map_y_offsets[]: -11
+	map_y_offsets[]: -14
+	map_y_offsets[]: 1
+	map_y_offsets[]: 4
+
+	vehicle_brands[]: "man"
+
+	license_plate[]: .edinburgh.lp.car
+	license_plate[]: .edinburgh.lp.truck_plyr
+	license_plate[]: .edinburgh.lp.trailer_plyr
+}
+
+# Give AI cars from this city a local plate of any age 50% of the time.
+# The rest of the time they will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .edinburgh.lp.car
+{
+	probability: 0.5
+	type: car
+	templates[]: "S01 222" # Scotland
+	def0[]: "K" # Edinburgh
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "N"
+	def0[]: "O"
+@include ".age_identifier_all.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give truck purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trucks; otherwise, all AI trucks would be on the newest plate.
+# AI trucks will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .edinburgh.lp.truck_plyr
+{
+	probability: 0
+	type: truck
+	templates[]: "S01 222" # Scotland
+	def0[]: "K" # Edinburgh
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "N"
+	def0[]: "O"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give trailer purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trailers; otherwise, all AI trailers would be on the newest plate.
+# AI trailers will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .edinburgh.lp.trailer_plyr
+{
+	probability: 0
+	type: trailer
+	templates[]: "S01 222" # Scotland
+	def0[]: "K" # Edinburgh
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "N"
+	def0[]: "O"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}

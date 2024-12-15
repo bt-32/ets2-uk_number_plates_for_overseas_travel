@@ -1,0 +1,135 @@
+
+city_data : city.newcastle
+{
+	city_name: "Newcastle-upon-Tyne"
+	city_name_localized: "@@newcastle_upon_tyne@@"
+	short_city_name: "Newcastle"
+	short_city_name_localized: "@@newcastle@@"
+	country: uk
+	population: 280000
+
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: -85
+	map_x_offsets[]: -55
+	map_x_offsets[]: -46
+	map_x_offsets[]: -51
+	map_x_offsets[]: -39
+	map_x_offsets[]: -40
+
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: -30
+	map_y_offsets[]: -28
+	map_y_offsets[]: -50
+	map_y_offsets[]: -28
+	map_y_offsets[]: -6
+	map_y_offsets[]: -30
+
+	vehicle_brands[]: "mercedes"
+
+	license_plate[]: .newcastle.lp.car
+	license_plate[]: .newcastle.lp.truck_plyr
+	license_plate[]: .newcastle.lp.trailer_plyr
+}
+
+# Give AI cars from this city a local plate of any age 50% of the time.
+# The rest of the time they will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .newcastle.lp.car
+{
+	probability: 0.5
+	type: car
+	templates[]: "N01 222" # Newcastle
+	def0[]: "A" # Newcastle + Stockton
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "N"
+	def0[]: "O"
+	def0[]: "P"
+	def0[]: "R"
+	def0[]: "S"
+	def0[]: "T"
+	def0[]: "U"
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_all.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give truck purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trucks; otherwise, all AI trucks would be on the newest plate.
+# AI trucks will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .newcastle.lp.truck_plyr
+{
+	probability: 0
+	type: truck
+	templates[]: "N01 222" # Newcastle
+	def0[]: "A" # Newcastle + Stockton
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "N"
+	def0[]: "O"
+	def0[]: "P"
+	def0[]: "R"
+	def0[]: "S"
+	def0[]: "T"
+	def0[]: "U"
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give trailer purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trailers; otherwise, all AI trailers would be on the newest plate.
+# AI trailers will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .newcastle.lp.trailer_plyr
+{
+	probability: 0
+	type: trailer
+	templates[]: "N01 222" # Newcastle
+	def0[]: "A" # Newcastle + Stockton
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "N"
+	def0[]: "O"
+	def0[]: "P"
+	def0[]: "R"
+	def0[]: "S"
+	def0[]: "T"
+	def0[]: "U"
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}

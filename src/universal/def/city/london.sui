@@ -1,0 +1,136 @@
+
+city_data : city.london
+{
+	city_name: "London"
+	city_name_localized: "@@london@@"
+	country: uk
+	population: 8800000
+
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: 18
+	map_x_offsets[]: -25
+	map_x_offsets[]: -42
+	map_x_offsets[]: -34
+	map_x_offsets[]: -33
+	map_x_offsets[]: -50
+
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: -12
+	map_y_offsets[]: 12
+	map_y_offsets[]: -113
+	map_y_offsets[]: -46
+	map_y_offsets[]: -20
+	map_y_offsets[]: -24
+
+	vehicle_brands[]: "volvo"
+
+	license_plate[]: .london.lp.car
+	license_plate[]: .london.lp.truck_plyr
+	license_plate[]: .london.lp.trailer_plyr
+}
+
+# Give AI cars from this city a local plate of any age 50% of the time.
+# The rest of the time they will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .london.lp.car
+{
+	probability: 0.5
+	type: car
+	templates[]: "L01 222" # London
+	def0[]: "A" # Wimbledon + Borehamwood + Sidcup
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "N"
+	def0[]: "O"
+	def0[]: "P"
+	def0[]: "R"
+	def0[]: "S"
+	def0[]: "T"
+	def0[]: "U"
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_all.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give truck purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trucks; otherwise, all AI trucks would be on the newest plate.
+# AI trucks will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .london.lp.truck_plyr
+{
+	probability: 0
+	type: truck
+	templates[]: "L01 222" # London
+	def0[]: "A" # Wimbledon + Borehamwood + Sidcup
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "N"
+	def0[]: "O"
+	def0[]: "P"
+	def0[]: "R"
+	def0[]: "S"
+	def0[]: "T"
+	def0[]: "U"
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give trailer purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trailers; otherwise, all AI trailers would be on the newest plate.
+# AI trailers will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .london.lp.trailer_plyr
+{
+	probability: 0
+	type: trailer
+	templates[]: "L01 222" # London
+	def0[]: "A" # Wimbledon + Borehamwood + Sidcup
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "N"
+	def0[]: "O"
+	def0[]: "P"
+	def0[]: "R"
+	def0[]: "S"
+	def0[]: "T"
+	def0[]: "U"
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}

@@ -1,0 +1,121 @@
+
+city_data : city.manchester
+{
+	city_name: "Manchester"
+	city_name_localized: "@@manchester@@"
+	country: uk
+	population: 550000
+
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: -90
+	map_x_offsets[]: -10
+	map_x_offsets[]: -34
+	map_x_offsets[]: -35
+	map_x_offsets[]: -46
+	map_x_offsets[]: -11
+
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 3
+	map_y_offsets[]: -85
+	map_y_offsets[]: -40
+	map_y_offsets[]: -22
+	map_y_offsets[]: -27
+
+	vehicle_brands[]: "scania"
+
+	license_plate[]: .manchester.lp.car
+	license_plate[]: .manchester.lp.truck_plyr
+	license_plate[]: .manchester.lp.trailer_plyr
+}
+
+# Give AI cars from this city a local plate of any age 50% of the time.
+# The rest of the time they will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .manchester.lp.car
+{
+	probability: 0.5
+	type: car
+	templates[]: "M01 222" # Manchester and Merseyside
+	def0[]: "A" # Manchester
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "P"
+	def0[]: "T"
+	def0[]: "U"
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+@include ".age_identifier_all.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give truck purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trucks; otherwise, all AI trucks would be on the newest plate.
+# AI trucks will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .manchester.lp.truck_plyr
+{
+	probability: 0
+	type: truck
+	templates[]: "M01 222" # Manchester and Merseyside
+	def0[]: "A" # Manchester
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "P"
+	def0[]: "T"
+	def0[]: "U"
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give trailer purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trailers; otherwise, all AI trailers would be on the newest plate.
+# AI trailers will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .manchester.lp.trailer_plyr
+{
+	probability: 0
+	type: trailer
+	templates[]: "M01 222" # Manchester and Merseyside
+	def0[]: "A" # Manchester
+	def0[]: "B"
+	def0[]: "C"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+	def0[]: "M"
+	def0[]: "P"
+	def0[]: "T"
+	def0[]: "U"
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}

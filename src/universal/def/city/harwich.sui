@@ -1,0 +1,77 @@
+
+city_data : city.harwich
+{
+	city_name: "Harwich"
+	city_name_localized: "@@harwich@@"
+	country: uk
+	population: 18000
+
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: -40
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+
+	license_plate[]: .harwich.lp.car
+	license_plate[]: .harwich.lp.truck_plyr
+	license_plate[]: .harwich.lp.trailer_plyr
+}
+
+# Give AI cars from this city a local plate of any age 50% of the time.
+# The rest of the time they will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .harwich.lp.car
+{
+	probability: 0.5
+	type: car
+	templates[]: "A01 222" # Anglia
+	def0[]: "V" # Ipswich
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_all.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give truck purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trucks; otherwise, all AI trucks would be on the newest plate.
+# AI trucks will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .harwich.lp.truck_plyr
+{
+	probability: 0
+	type: truck
+	templates[]: "A01 222" # Anglia
+	def0[]: "V" # Ipswich
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give trailer purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trailers; otherwise, all AI trailers would be on the newest plate.
+# AI trailers will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .harwich.lp.trailer_plyr
+{
+	probability: 0
+	type: trailer
+	templates[]: "A01 222" # Anglia
+	def0[]: "V" # Ipswich
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}

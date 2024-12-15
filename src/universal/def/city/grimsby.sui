@@ -1,0 +1,88 @@
+
+city_data : city.grimsby
+{
+	city_name: "Grimsby"
+	city_name_localized: "@@grimsby@@"
+	country: uk
+	population: 85000
+
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: -135
+	map_x_offsets[]: -30
+	map_x_offsets[]: -36
+	map_x_offsets[]: -37
+	map_x_offsets[]: -36
+	map_x_offsets[]: -36
+
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: -45
+	map_y_offsets[]: 12
+	map_y_offsets[]: -53
+	map_y_offsets[]: -52
+	map_y_offsets[]: -29
+	map_y_offsets[]: -26
+
+	vehicle_brands[]: "iveco"
+
+	license_plate[]: .grimsby.lp.car
+	license_plate[]: .grimsby.lp.truck_plyr
+	license_plate[]: .grimsby.lp.trailer_plyr
+}
+
+# Give AI cars from this city a local plate of any age 50% of the time.
+# The rest of the time they will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .grimsby.lp.car
+{
+	probability: 0.5
+	type: car
+	templates[]: "F01 222" # Forest and Fens
+	def0[]: "R" # Lincoln
+	def0[]: "S"
+	def0[]: "T"
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_all.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give truck purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trucks; otherwise, all AI trucks would be on the newest plate.
+# AI trucks will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .grimsby.lp.truck_plyr
+{
+	probability: 0
+	type: truck
+	templates[]: "F01 222" # Forest and Fens
+	def0[]: "R" # Lincoln
+	def0[]: "S"
+	def0[]: "T"
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give trailer purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trailers; otherwise, all AI trailers would be on the newest plate.
+# AI trailers will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .grimsby.lp.trailer_plyr
+{
+	probability: 0
+	type: trailer
+	templates[]: "F01 222" # Forest and Fens
+	def0[]: "R" # Lincoln
+	def0[]: "S"
+	def0[]: "T"
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}

@@ -1,0 +1,4 @@
+        # Age identifier for brand new vehicles
+        # Constraints: Last two digits of the year itself (between March and August) or 50 added to that value (between September and February).
+
+        def1[]: "74"

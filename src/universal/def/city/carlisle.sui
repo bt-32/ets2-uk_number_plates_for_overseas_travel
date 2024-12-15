@@ -1,0 +1,80 @@
+
+city_data : city.carlisle
+{
+	city_name: "Carlisle"
+	city_name_localized: "@@carlisle@@"
+	country: uk
+	population: 110000
+
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: -10
+	map_x_offsets[]: -30
+	map_x_offsets[]: -30
+	map_x_offsets[]: -33
+	map_x_offsets[]: -39
+	map_x_offsets[]: -34
+
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 25
+	map_y_offsets[]: -35
+	map_y_offsets[]: 53
+	map_y_offsets[]: 8
+	map_y_offsets[]: 1
+	map_y_offsets[]: 4
+
+	license_plate[]: .carlisle.lp.car
+	license_plate[]: .carlisle.lp.truck_plyr
+	license_plate[]: .carlisle.lp.trailer_plyr
+}
+
+# Give AI cars from this city a local plate of any age 50% of the time.
+# The rest of the time they will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .carlisle.lp.car
+{
+	probability: 0.5
+	type: car
+	templates[]: "P01 222" # Preston
+	def0[]: "U" # Carlisle
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_all.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give truck purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trucks; otherwise, all AI trucks would be on the newest plate.
+# AI trucks will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .carlisle.lp.truck_plyr
+{
+	probability: 0
+	type: truck
+	templates[]: "P01 222" # Preston
+	def0[]: "U" # Carlisle
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give trailer purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trailers; otherwise, all AI trailers would be on the newest plate.
+# AI trailers will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .carlisle.lp.trailer_plyr
+{
+	probability: 0
+	type: trailer
+	templates[]: "P01 222" # Preston
+	def0[]: "U" # Carlisle
+	def0[]: "V"
+	def0[]: "W"
+	def0[]: "X"
+	def0[]: "Y"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}

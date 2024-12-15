@@ -1,0 +1,23 @@
+SiiNunit
+{
+    license_plate_data : .lp.car
+    {
+        type: car
+        templates[]: "001 222"
+@include "license_plates_values.sui"
+    }
+
+    license_plate_data : .lp.truck
+    {
+        type: truck
+        templates[]: "001 222"
+@include "license_plates_values.sui"
+    }
+
+    license_plate_data : .lp.trailer
+    {
+        type: trailer
+        templates[]: "001 222"
+@include "license_plates_values.sui"
+    }
+}

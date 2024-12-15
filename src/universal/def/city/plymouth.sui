@@ -1,0 +1,97 @@
+
+city_data : city.plymouth
+{
+	city_name: "Plymouth"
+	city_name_localized: "@@plymouth@@"
+	country: uk
+	population: 265000
+
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: -20
+	map_x_offsets[]: -39
+	map_x_offsets[]: -37
+	map_x_offsets[]: -40
+	map_x_offsets[]: -42
+
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 25
+	map_y_offsets[]: -20
+	map_y_offsets[]: -83
+	map_y_offsets[]: -70
+	map_y_offsets[]: -35
+	map_y_offsets[]: -26
+
+	vehicle_brands[]: "mercedes"
+
+	license_plate[]: .plymouth.lp.car
+	license_plate[]: .plymouth.lp.truck_plyr
+	license_plate[]: .plymouth.lp.trailer_plyr
+}
+
+# Give AI cars from this city a local plate of any age 50% of the time.
+# The rest of the time they will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .plymouth.lp.car
+{
+	probability: 0.5
+	type: car
+	templates[]: "W01 222" # West of England
+	def0[]: "A" # Exeter + Truro
+	def0[]: "B"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+@include ".age_identifier_all.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give truck purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trucks; otherwise, all AI trucks would be on the newest plate.
+# AI trucks will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .plymouth.lp.truck_plyr
+{
+	probability: 0
+	type: truck
+	templates[]: "W01 222" # West of England
+	def0[]: "A" # Exeter + Truro
+	def0[]: "B"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give trailer purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trailers; otherwise, all AI trailers would be on the newest plate.
+# AI trailers will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .plymouth.lp.trailer_plyr
+{
+	probability: 0
+	type: trailer
+	templates[]: "W01 222" # West of England
+	def0[]: "A" # Exeter + Truro
+	def0[]: "B"
+	def0[]: "D"
+	def0[]: "E"
+	def0[]: "F"
+	def0[]: "G"
+	def0[]: "H"
+	def0[]: "J"
+	def0[]: "K"
+	def0[]: "L"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}

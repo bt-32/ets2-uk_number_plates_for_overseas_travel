@@ -1,0 +1,73 @@
+
+city_data : city.aberdeen
+{
+	city_name: "Aberdeen"
+	city_name_localized: "@@aberdeen@@"
+	country: uk
+	population: 230000
+
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: 0
+	map_x_offsets[]: -3
+	map_x_offsets[]: -44
+	map_x_offsets[]: -40
+	map_x_offsets[]: -40
+	map_x_offsets[]: -41
+
+	map_y_offsets[]: 0
+	map_y_offsets[]: 0
+	map_y_offsets[]: 35
+	map_y_offsets[]: -8
+	map_y_offsets[]: -32
+	map_y_offsets[]: -39
+	map_y_offsets[]: -27
+	map_y_offsets[]: -26
+
+	vehicle_brands[]: "scania"
+
+	license_plate[]: .aberdeen.lp.car
+	license_plate[]: .aberdeen.lp.truck_plyr
+	license_plate[]: .aberdeen.lp.trailer_plyr
+}
+
+# Give AI cars from this city a local plate of any age 50% of the time.
+# The rest of the time they will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .aberdeen.lp.car
+{
+	probability: 0.5
+	type: car
+	templates[]: "S01 222" # Scotland
+	def0[]: "V" # Aberdeen
+	def0[]: "W"
+@include ".age_identifier_all.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give truck purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trucks; otherwise, all AI trucks would be on the newest plate.
+# AI trucks will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .aberdeen.lp.truck_plyr
+{
+	probability: 0
+	type: truck
+	templates[]: "S01 222" # Scotland
+	def0[]: "V" # Aberdeen
+	def0[]: "W"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}
+
+# Give trailer purchases/relocations by the player a brand new local plate.
+# Setting the probability to 0 here means it won't be used for AI trailers; otherwise, all AI trailers would be on the newest plate.
+# AI trailers will fall back to a country plate of any age (defined in def/country/uk/license_plates.sii).
+license_plate_data : .aberdeen.lp.trailer_plyr
+{
+	probability: 0
+	type: trailer
+	templates[]: "S01 222" # Scotland
+	def0[]: "V" # Aberdeen
+	def0[]: "W"
+@include ".age_identifier_new.sui"
+@include ".three_letter_sequence.sui"
+}

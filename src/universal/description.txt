@@ -1,18 +1,230 @@
-[h1]UK Number Plates for Overseas Travel[/h1]
+[h1]UK Number Plate Overhaul[/h1]
 
-This mod updates the number (license) plates for the United Kingdom (UK) to match the format that has been valid for overseas travel since 28th September 2021. It is perfect for anyone who likes realism, such as myself.
+This mod overhauls the number (license) plates for the United Kingdom (UK) to be more realistic and true-to-life. It is perfect for anyone who likes realism, such as myself.
 
-Compared to the default SCS UK number plates, this mod changes the 'GB' to 'UK' and removes the blue flash.
-
-Since the above date, the country identifier 'GB' on a blue background - while still legal within the UK on already-issued plates - is no longer valid for overseas travel. The valid overseas specification is:
-
+The features of this mod are:
 [list]
-    [*] The letters 'UK' in royal blue, matching the blue in the Union Flag.
+    [*] [b]Local memory tags (first two letters):[/b] updated to be accurate across each UK city.
+    [*] [b]Age identifier (year in the middle):[/b] expanded to include all combinations from 2001 ("51") to present ("74").
+    [*] [b]Three-letter sequence (final three letters):[/b] updated to include "Z" per real life.
+    [*] [b]Country identifier:[/b] changed from "GB" to "UK" and removed the blue flash.
+[/list]
+
+[h2]Local memory tags[/h2]
+
+These are the first two letters of the plate. They are based on the region where the vehicle was registered (e.g. "BT" is one of many tags for Birmingham). This mod updates the country and city definitions for the UK to generate accurate local memory tags for both generic UK traffic and city-specific UK traffic.
+
+[b]With this mod:[/b]
+[list]
+    [*] AI traffic cars have a 50% chance to receive a local memory tag for the current in-game city, otherwise they will receive a random UK one.
+    [*] AI traffic trucks and trailers will always receive a random UK local memory tag.
+    [*] Truck and trailer purchases or relocations by the player will always receive a local memory tag for the target garage's city.
+[/list]
+
+The mappings used by this mod are:
+
+[table]
+[tr]
+[th]In-game city[/th]
+[th]First letter[/th]
+[th]Real-life region used for first letter[/th]
+[th]Real-life office(s) used for second letters[/th]
+[th]Second letters[/th]
+[/tr]
+[tr]
+[td]Aberdeen[/td]
+[td][b]S[/b][/td]
+[td][b]S[/b]cotland[/td]
+[td]Aberdeen[/td]
+[td]V W[/td]
+[/tr]
+[tr]
+[td]Birmingham[/td]
+[td][b]B[/b][/td]
+[td][b]B[/b]irmingham[/td]
+[td]Birmingham[/td]
+[td]A B C D E F G H J K L M N O P R S T U V W X[/td]
+[/tr]
+[tr]
+[td]Cambridge[/td]
+[td][b]A[/b][/td]
+[td][b]A[/b]nglia[/td]
+[td]Peterborough[/td]
+[td]A B C D E F G J K M N[/td]
+[/tr]
+[tr]
+[td]Cardiff[/td]
+[td][b]C[/b][/td]
+[td][b]C[/b]ymru (Wales)[/td]
+[td]Cardiff[/td]
+[td]A B C D E F G H J K L M N O[/td]
+[/tr]
+[tr]
+[td]Carlisle[/td]
+[td][b]P[/b][/td]
+[td][b]P[/b]reston[/td]
+[td]Carlisle[/td]
+[td]U V W X Y[/td]
+[/tr]
+[tr]
+[td]Dover[/td]
+[td][b]G[/b][/td]
+[td][b]G[/b]arden of England[/td]
+[td]Maidstone[/td]
+[td]A B C D E F G H J K L M N[/td]
+[/tr]
+[tr]
+[td]Edinburgh[/td]
+[td][b]S[/b][/td]
+[td][b]S[/b]cotland[/td]
+[td]Edinburgh[/td]
+[td]K L M N O[/td]
+[/tr]
+[tr]
+[td]Felixstowe[/td]
+[td][b]A[/b][/td]
+[td][b]A[/b]nglia[/td]
+[td]Ipswich[/td]
+[td]V W X Y[/td]
+[/tr]
+[tr]
+[td]Glasgow[/td]
+[td][b]S[/b][/td]
+[td][b]S[/b]cotland[/td]
+[td]Glasgow[/td]
+[td]A B C D E F G H J[/td]
+[/tr]
+[tr]
+[td]Grimsby[/td]
+[td][b]F[/b][/td]
+[td][b]F[/b]orest and [b]F[/b]ens[/td]
+[td]Lincoln[/td]
+[td]R S T V W X Y[/td]
+[/tr]
+[tr]
+[td]Harwich[/td]
+[td][b]A[/b][/td]
+[td][b]A[/b]nglia[/td]
+[td]Ipswich[/td]
+[td]V W X Y[/td]
+[/tr]
+[tr]
+[td]Hull[/td]
+[td][b]Y[/b][/td]
+[td][b]Y[/b]orkshire[/td]
+[td]Beverley[/td]
+[td]W X Y[/td]
+[/tr]
+[tr]
+[td]Liverpool[/td]
+[td][b]M[/b][/td]
+[td][b]M[/b]anchester and [b]M[/b]erseyside[/td]
+[td]Manchester[/td]
+[td]A B C D E F G H J K L M P T U V W X[/td]
+[/tr]
+[tr]
+[td]London[/td]
+[td][b]L[/b][/td]
+[td][b]L[/b]ondon[/td]
+[td]Wimbledon + Borehamwood + Sidcup[/td]
+[td]A B C D E F G H J K L M N O P R S T U V W X Y[/td]
+[/tr]
+[tr]
+[td]Manchester[/td]
+[td][b]M[/b][/td]
+[td][b]M[/b]anchester and [b]M[/b]erseyside[/td]
+[td]Manchester[/td]
+[td]A B C D E F G H J K L M P T U V W X[/td]
+[/tr]
+[tr]
+[td]Newcastle[/td]
+[td][b]N[/b][/td]
+[td][b]N[/b]ewcastle[/td]
+[td]Newcastle + Stockton[/td]
+[td]A B C D E G H J K L M N O P R S T U V W X Y[/td]
+[/tr]
+[tr]
+[td]Plymouth[/td]
+[td][b]W[/b][/td]
+[td][b]W[/b]est of England[/td]
+[td]Exeter + Truro[/td]
+[td]A B D E F G H J K L[/td]
+[/tr]
+[tr]
+[td]Sheffield[/td]
+[td][b]Y[/b][/td]
+[td][b]Y[/b]orkshire[/td]
+[td]Sheffield[/td]
+[td]M N O P R S T U V[/td]
+[/tr]
+[tr]
+[td]Southampton[/td]
+[td][b]H[/b][/td]
+[td][b]H[/b]ampshire, Dorset and Isle of Wight[/td]
+[td]Portsmouth[/td]
+[td]K L M N P R S T U V X Y[/td]
+[/tr]
+[tr]
+[td]Swansea[/td]
+[td][b]C[/b][/td]
+[td][b]C[/b]ymru (Wales)[/td]
+[td]Swansea[/td]
+[td]P R S T U V[/td]
+[/tr]
+[/table]
+
+Source: [url=https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_the_United_Kingdom#Local_memory_tags]Wikipedia[/url]
+
+[h2]Age identifier[/h2]
+
+These are the two numbers in the middle of the plate. They are the last two digits of the year itself (for registrations between March and August) or 50 added to that value (for registrations between September and February of the following year).
+
+The default game limits the age identifiers to the range from "09" to "67". This mod extends age identifiers to the full set from 2001 ("51") to present ("74"). I will aim to update this mod as each new age identifier begins to be issued in reality, twice per year.
+
+[b]With this mod:[/b]
+[list]
+    [*] AI traffic vehicles always receive a random age identifier.
+    [*] Truck and trailer purchases or relocations by the player will always receive the newest age identifier (currently "74").
+[/list]
+
+The age identifiers used by this mod are:
+
+[code]51, 02, 52, 03, 53, 04, 54, 05, 55, 06, 56, 07, 57, 08, 58, 09, 59, 10, 60, 11, 61, 12, 62, 13, 63, 14, 64, 15, 65, 16, 66, 17, 67, 18, 68, 19, 69, 20, 70, 21, 71, 22, 72, 23, 73, 24, 74[/code]
+
+In real life, vehicles can have a plate that is older than the vehicle but not one that is newer. In the game, plate generation cannot (that I am aware of) be based on vehicle age. Therefore, we will just have to collectively agree to suspend our disbelief (or modify our saves) when, for example, a 20 year old car model is assigned a plate from the 2020s, or our aging DAF gets a brand new plate because we moved it to another city.
+
+Source: [url=https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_the_United_Kingdom#Age_identifiers]Wikipedia[/url]
+
+[h2]Three-letter sequence[/h2]
+
+These are the final three letters of the plate. In real life, "I" and "Q" are not permitted. However, the default game also does not allow "Z" in this section, which is inaccurate.
+
+[b]With this mod:[/b]
+[list]
+    [*] "Z" can be generated into the final three letters of UK number plates.
+    [*] "I" and "Q" remain not permitted.
+[/list]
+
+Source: [url=https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_the_United_Kingdom#Characters]Wikipedia[/url]
+
+[h2]Country identifier[/h2]
+
+Since 28th September 2021, the country identifier "GB" on a blue background - while still legal within the UK on already-issued plates - is no longer valid for overseas travel.
+
+The valid overseas specification is:
+[list]
+    [*] The letters "UK" in royal blue, matching the blue in the Union Flag.
     [*] The Union Flag (also known as the Union Jack) in landscape in specific colours.
     [*] A background that is the same colour as the number plate (white for front, yellow for rear).
     [*] Like all other flags and flashes, the flag must be positioned to the far-left side of the number plate.
 [/list]
 
-If you're SUPER keen for realism, remember that UK vehicles travelling in Spain, Cyprus and Malta must still show a UK sticker, regardless of what plate(s) they have.
+[b]With this mod:[/b]
+[list]
+    [*] The country identifier is changed from "GB" to "UK".
+    [*] The blue flash (background on the left of the plate) is removed.
+[/list]
+
+If you're SUPER keen for realism, remember that UK vehicles traveling in Spain, Cyprus and Malta must still show a UK sticker, regardless of what plate(s) they have.
 
 Source: [url=https://www.bnma.org/news/uk-flag-number-plate-design-confirmed-for-overseas-travel/]British Number Plate Manufacturers Association[/url]
