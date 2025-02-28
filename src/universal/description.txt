@@ -5,7 +5,7 @@ This mod overhauls the number (license) plates for the United Kingdom (UK) to be
 The features of this mod are:
 [list]
     [*] [b]Local memory tags (first two letters):[/b] updated to be accurate across each UK city.
-    [*] [b]Age identifier (year in the middle):[/b] expanded to include all combinations from 2001 ("51") to present ("74").
+    [*] [b]Age identifier (year in the middle):[/b] expanded to include all combinations from 2001 ("51") to present ("25").
     [*] [b]Three-letter sequence (final three letters):[/b] updated to include "Z" per real life.
     [*] [b]Country identifier:[/b] changed from "GB" to "UK" and removed the blue flash.
 [/list]
@@ -179,17 +179,17 @@ Source: [url=https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_the_Un
 
 These are the two numbers in the middle of the plate. They are the last two digits of the year itself (for registrations between March and August) or 50 added to that value (for registrations between September and February of the following year).
 
-The default game limits the age identifiers to the range from "09" to "67". This mod extends age identifiers to the full set from 2001 ("51") to present ("74"). I will aim to update this mod as each new age identifier begins to be issued in reality, twice per year.
+The default game limits the age identifiers to the range from "09" to "67". This mod extends age identifiers to the full set from 2001 ("51") to present ("25"). I will aim to update this mod as each new age identifier begins to be issued in reality, twice per year.
 
 [b]With this mod:[/b]
 [list]
     [*] AI traffic vehicles always receive a random age identifier.
-    [*] Truck and trailer purchases or relocations by the player will always receive the newest age identifier (currently "74").
+    [*] Truck and trailer purchases or relocations by the player will always receive the newest age identifier (currently "25").
 [/list]
 
 The age identifiers used by this mod are:
 
-[code]51, 02, 52, 03, 53, 04, 54, 05, 55, 06, 56, 07, 57, 08, 58, 09, 59, 10, 60, 11, 61, 12, 62, 13, 63, 14, 64, 15, 65, 16, 66, 17, 67, 18, 68, 19, 69, 20, 70, 21, 71, 22, 72, 23, 73, 24, 74[/code]
+[code]51, 02, 52, 03, 53, 04, 54, 05, 55, 06, 56, 07, 57, 08, 58, 09, 59, 10, 60, 11, 61, 12, 62, 13, 63, 14, 64, 15, 65, 16, 66, 17, 67, 18, 68, 19, 69, 20, 70, 21, 71, 22, 72, 23, 73, 24, 74, 25[/code]
 
 In real life, vehicles can have a plate that is older than the vehicle but not one that is newer. In the game, plate generation cannot (that I am aware of) be based on vehicle age. Therefore, we will just have to collectively agree to suspend our disbelief (or modify our saves) when, for example, a 20 year old car model is assigned a plate from the 2020s, or our aging DAF gets a brand new plate because we moved it to another city.
 

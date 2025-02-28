@@ -27,7 +27,7 @@
         def0[]: "Y"
 
         # Age identifier
-        # Gives more variation. Will allow for newer vehicles to have older plates, as if they were personalised. The downside is older vehicles could have newer plates than they would legally be allowed, but we will just have to suspend disbelief little.
+        # Gives more variation. Will allow for newer vehicles to have older plates, as if they were personalised. The downside is older vehicles could have newer plates than they would legally be allowed, but we will just have to suspend disbelief a little.
         # Constraints: Last two digits of the year itself (between March and August) or 50 added to that value (between September and February).
 
         def1[]: "51"
@@ -77,6 +77,7 @@
         def1[]: "73"
         def1[]: "24"
         def1[]: "74"
+        def1[]: "25"
 
         # Three-letter sequence
         # Constraints: "I" and "Q" are not permitted.
