@@ -78,6 +78,7 @@
         def1[]: "24"
         def1[]: "74"
         def1[]: "25"
+        def1[]: "75"
 
         # Three-letter sequence
         # Constraints: "I" and "Q" are not permitted.
